@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{factorial}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{number}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{factorial\PYGZus{}result}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{while}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{number}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{factorial\PYGZus{}result}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{factorial\PYGZus{}result}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{number}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{number}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{factorial\PYGZus{}result}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\end{Verbatim}

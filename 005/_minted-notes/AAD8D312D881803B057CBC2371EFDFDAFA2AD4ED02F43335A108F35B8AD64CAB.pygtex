@@ -1,0 +1,47 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}cstddef\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}iostream\PYGZgt{}}
+
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{()}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{size\PYGZus{}t}\PYG{+w}{ }\PYG{n}{dynamic\PYGZus{}array\PYGZus{}size}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{5}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{size\PYGZus{}t}\PYG{+w}{ }\PYG{n}{data\PYGZus{}entries}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{dynamic\PYGZus{}array\PYGZus{}ptr}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{p}{[}\PYG{n}{dynamic\PYGZus{}array\PYGZus{}size}\PYG{p}{];}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{temporary\PYGZus{}array\PYGZus{}ptr}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+c1}{// how many will elements will we try to stuff into the array?}
+\PYG{+w}{    }\PYG{c+c1}{//int last\PYGZus{}loop\PYGZus{}iteration = dynamic\PYGZus{}array\PYGZus{}size\PYGZhy{}1;}
+\PYG{+w}{    }\PYG{c+c1}{//int last\PYGZus{}loop\PYGZus{}iteration = dynamic\PYGZus{}array\PYGZus{}size;}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{last\PYGZus{}loop\PYGZus{}iteration}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{dynamic\PYGZus{}array\PYGZus{}size}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{c+c1}{// let\PYGZsq{}s put some elements on the array}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{index}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{index}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{last\PYGZus{}loop\PYGZus{}iteration}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{index}\PYG{o}{++}\PYG{p}{)}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Starting for loop iteration\PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Size of array: \PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{dynamic\PYGZus{}array\PYGZus{}size}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}elements in array: \PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{data\PYGZus{}entries}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+
+\PYG{+w}{        }\PYG{c+c1}{// we might need to add more capacity to the array}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{data\PYGZus{}entries}\PYG{+w}{ }\PYG{o}{\PYGZgt{}=}\PYG{+w}{ }\PYG{n}{dynamic\PYGZus{}array\PYGZus{}size}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Looks like we need to add more capacity to the array.\PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+\PYG{+w}{            }\PYG{n}{dynamic\PYGZus{}array\PYGZus{}size}\PYG{+w}{ }\PYG{o}{*=}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{;}
+\PYG{+w}{            }\PYG{n}{temporary\PYGZus{}array\PYGZus{}ptr}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{p}{[}\PYG{n}{dynamic\PYGZus{}array\PYGZus{}size}\PYG{p}{];}
+\PYG{+w}{            }\PYG{n}{std}\PYG{o}{::}\PYG{n}{copy}\PYG{p}{(}\PYG{n}{dynamic\PYGZus{}array\PYGZus{}ptr}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{dynamic\PYGZus{}array\PYGZus{}ptr}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{data\PYGZus{}entries}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{temporary\PYGZus{}array\PYGZus{}ptr}\PYG{p}{);}
+\PYG{+w}{            }\PYG{k}{delete}\PYG{+w}{ }\PYG{n}{dynamic\PYGZus{}array\PYGZus{}ptr}\PYG{p}{;}
+\PYG{+w}{            }\PYG{n}{dynamic\PYGZus{}array\PYGZus{}ptr}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{temporary\PYGZus{}array\PYGZus{}ptr}\PYG{p}{;}
+\PYG{+w}{            }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}New array capacity: \PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{dynamic\PYGZus{}array\PYGZus{}size}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{        }\PYG{c+c1}{// adding element to array}
+\PYG{+w}{        }\PYG{n}{dynamic\PYGZus{}array\PYGZus{}ptr}\PYG{p}{[}\PYG{n}{index}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{index}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{data\PYGZus{}entries}\PYG{o}{++}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Ending for loop iteration\PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{} \PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{::}\PYG{n}{endl}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\end{Verbatim}

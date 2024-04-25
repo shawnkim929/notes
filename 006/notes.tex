@@ -1,0 +1,206 @@
+\documentclass[11pt,a4paper,english]{paper}
+\usepackage{mathtools}
+\usepackage[breakable]{tcolorbox}
+\usepackage{minted}
+\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bluebox}[1]{colback=blue!5!white,colframe=blue!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{gbox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bbox}[1]{colback=black!5!white,colframe=black!75!black,fonttitle=\bfseries,title=#1,breakable}
+\usepackage{amsmath}                                    % extensive math options
+\usepackage{amssymb}                                    % special math symbols
+\usepackage[Gray,squaren,thinqspace,thinspace]{SIunits} % elegant units
+\usepackage{listings}                                   % source code
+
+\setminted{breaklines}
+
+\begin{document}
+
+\title{CS 008 \\ Lecture notes \\ 3/14/24}
+\maketitle
+
+\section{Outline}
+\begin{itemize}
+  \item Announcement
+  \item Templates
+  \item Linked-lists and Double Linked-lists
+  \item Big-O discussion
+  \item Assignment 2 (Sequences part 2)
+
+\end{itemize}
+
+\section{Announcement}
+\begin{gbox}{Announcement:}{
+
+  There will be Office Hours held from Monday, Wednesday and Friday from 4-5 pm on Zoom. You can find the link on the Canvas homepage.
+
+}\end{gbox}
+
+\section{Templates}
+
+When you have multiple classes that perform the same task but for different datatypes, you can create a template class instead. You can declare a template with \mintinline{cpp}{template <class Template_parameter_name>} on the line before the class definition of the header file.
+
+\bigskip
+
+\noindent When converted to a template class, various changes to member and non-member functions will be needed. Any functions that use the template class will need modifications. The implementation of templated class methods must be in the header file. Instead, put a include statement at the bottom of the file.
+
+\bigskip
+
+\begin{bluebox}{Note:} {
+
+    See Section 6.2 of the textbook (Main and Savitch) for full syntax. \textbf{(Particularly the textbox on Page 304).}
+
+
+}\end{bluebox}
+
+\bigskip
+\noindent Some examples of templates can be seen in the figures below.
+\bigskip
+
+\begin{bbox}{Figure: bag\_templated.h}{
+
+  \begin{minted}{cpp}
+
+#ifndef MAIN_SAVITCH_BAG5_H
+#define MAIN_SAVITCH_BAG5_H
+
+#include <cstdlib> // Provides NULL and size_t and NULL
+#include "node2.h" // Provides node class
+
+template <class Item>
+
+class bag
+{
+    public:
+        // TYPEDEFS
+        typedef std::size_t size_type;
+        typedef Item value_type;
+        // CONSTRUCTORS and DESTRUCTOR
+        bag( );
+        bag(const bag& source);
+        ~bag( );
+        // MODIFICATION MEMBER FUNCTIONS
+        size_type erase(const Item& target);
+        bool erase_one(const Item& target);
+        void insert(const Item& entry);
+        void operator +=(const bag& addend);
+        void operator =(const bag& source);
+        // CONST MEMBER FUNCTIONS
+        size_type count(const Item& target) const;
+        Item grab( ) const;
+        size_type size( ) const { return many_nodes; }
+
+    private:
+        node<Item> *head_ptr; // Head pointer for the list of items
+        size_type many_nodes; // Number of nodes on the list
+};
+
+// NONMEMBER FUNCTIONS for the bag<Item> template class
+template <class Item>
+bag<Item> operator +(const bag<Item>& b1, const bag<Item>& b2);
+
+// The implementation of a template class must be included in its header file:
+#include "bag_templated.template"
+
+#endif
+\end{minted}
+
+}\end{bbox}
+
+\section{Linked lists and Doubly-Linked lists}
+
+A linked list is a type of data structure that is comprised of list of nodes. Each node, except for the \textbf{head}, points to another node regardless of where it is in memory. The nodes contain data and a pointer to the next node.
+
+\bigskip
+
+
+\noindent The fundamental unit of both types is called a \textbf{node}. A node for a \textbf{linked list} consists of data and a pointer which points to the next node in the list. For a \textbf{doubly-linked list}, the nodes consist of data, a pointer which points to the next node in the list and the pointer which points to the previous node in the list.
+
+\bigskip
+
+\begin{bluebox}{Example:} {
+
+    For a \textbf{linked list}, an example node can be seen here:
+
+\begin{minted}{cpp}
+struct node {
+
+  node* next;
+  (data type) data;
+
+};
+\end{minted}
+
+\bigskip
+
+    Both \textbf{linked lists} and \textbf{doubly-linked lists} use nodes. However, both nodes are different in small ways. An example of a doubly-linked node can be:
+
+\begin{minted}{cpp}
+struct node {
+
+  node* next;
+  node* previous;
+  (data type) data;
+
+}
+\end{minted}
+}
+\end{bluebox}
+
+\bigskip
+
+\begin{gbox}{Question:} {
+
+    How would you know where to find the last node in a linked list?
+
+    \bigskip
+    \textbf{Answer}: To get the last node in a linked list, you would need to iterate through the linked list and find a node that points to \textit{null}. Therefore, the node that points to \textit{null} will be the last.
+
+    \bigskip
+    What is the time complexity (O(..)) of finding the last node in a linked list?
+
+    \bigskip
+    \textbf{Answer}: The time complexity of finding the last node in a linked list is $O(n)$ where $n$ represents the number of nodes.
+
+
+} \end{gbox}
+
+
+\section{O(n) discussion}
+
+Consider a function: $f(x) = a_{n}x^n + x^{n-1}$
+
+\bigskip
+\noindent \textbf{What would be the time complexity of this function?}
+\bigskip
+
+\noindent To figure out the time complexity of the function given, we must look for the highest order of the function: $a_{n}x^n$. The coefficient is then dropped to reveal $x^n$ which is now the function's time complexity, $O(x^n)$.
+
+\bigskip
+
+\begin{gbox}{Question:} {
+
+  If we had an array of integers with a size of 10 and we have 5 elements filled up in the array, what would be the time complexity of adding a 6th element to the array?
+
+  \bigskip
+  \textbf{Answer}: It would be $O(1)$ since it would take 2 operations: Getting the 6th index in the array and setting a value for the 6th element. The coefficient is dropped from the largest power and is reduced to 1. Therefore, the result is $O(1)$.
+
+
+  }
+\end{gbox}
+
+\section{Sequence part 2}
+
+There will be a new assignment that will revisit Sequences and also templates.
+
+\bigskip
+
+\noindent The new assignment is designed to:
+\begin{itemize} 
+  \item Get you more familiar with templates
+  \item To understand the emphasis on the header (.h) file and the implementation (.cpp)
+  \item Get more comfortable analyzing the run time complexity of real functions.
+\end{itemize}
+
+\bigskip
+
+\end{document}

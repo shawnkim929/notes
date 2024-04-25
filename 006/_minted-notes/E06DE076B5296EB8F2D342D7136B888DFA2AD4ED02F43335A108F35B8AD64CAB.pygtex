@@ -1,0 +1,45 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{c+cp}{\PYGZsh{}ifndef MAIN\PYGZus{}SAVITCH\PYGZus{}BAG5\PYGZus{}H}
+\PYG{c+cp}{\PYGZsh{}define MAIN\PYGZus{}SAVITCH\PYGZus{}BAG5\PYGZus{}H}
+
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}cstdlib\PYGZgt{}}\PYG{c+c1}{ // Provides NULL and size\PYGZus{}t and NULL}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}node2.h\PYGZdq{}}\PYG{c+c1}{ // Provides node class}
+
+\PYG{k}{template}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{Item}\PYG{o}{\PYGZgt{}}
+
+\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{bag}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{public}\PYG{o}{:}
+\PYG{+w}{        }\PYG{c+c1}{// TYPEDEFS}
+\PYG{+w}{        }\PYG{k}{typedef}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{::}\PYG{k+kt}{size\PYGZus{}t}\PYG{+w}{ }\PYG{n}{size\PYGZus{}type}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{typedef}\PYG{+w}{ }\PYG{n}{Item}\PYG{+w}{ }\PYG{n}{value\PYGZus{}type}\PYG{p}{;}
+\PYG{+w}{        }\PYG{c+c1}{// CONSTRUCTORS and DESTRUCTOR}
+\PYG{+w}{        }\PYG{n}{bag}\PYG{p}{(}\PYG{+w}{ }\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{bag}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{bag}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{source}\PYG{p}{);}
+\PYG{+w}{        }\PYG{o}{\PYGZti{}}\PYG{n}{bag}\PYG{p}{(}\PYG{+w}{ }\PYG{p}{);}
+\PYG{+w}{        }\PYG{c+c1}{// MODIFICATION MEMBER FUNCTIONS}
+\PYG{+w}{        }\PYG{n}{size\PYGZus{}type}\PYG{+w}{ }\PYG{n+nf}{erase}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{Item}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{target}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n+nf}{erase\PYGZus{}one}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{Item}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{target}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{insert}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{Item}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{entry}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{k}{operator}\PYG{+w}{ }\PYG{o}{+=}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{bag}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{addend}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{k}{operator}\PYG{+w}{ }\PYG{o}{=}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{bag}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{source}\PYG{p}{);}
+\PYG{+w}{        }\PYG{c+c1}{// CONST MEMBER FUNCTIONS}
+\PYG{+w}{        }\PYG{n}{size\PYGZus{}type}\PYG{+w}{ }\PYG{n+nf}{count}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{Item}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{target}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{const}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{Item}\PYG{+w}{ }\PYG{n+nf}{grab}\PYG{p}{(}\PYG{+w}{ }\PYG{p}{)}\PYG{+w}{ }\PYG{k}{const}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{size\PYGZus{}type}\PYG{+w}{ }\PYG{n+nf}{size}\PYG{p}{(}\PYG{+w}{ }\PYG{p}{)}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{many\PYGZus{}nodes}\PYG{p}{;}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k}{private}\PYG{o}{:}
+\PYG{+w}{        }\PYG{n}{node}\PYG{o}{\PYGZlt{}}\PYG{n}{Item}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{head\PYGZus{}ptr}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{// Head pointer for the list of items}
+\PYG{+w}{        }\PYG{n}{size\PYGZus{}type}\PYG{+w}{ }\PYG{n}{many\PYGZus{}nodes}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{// Number of nodes on the list}
+\PYG{p}{\PYGZcb{};}
+
+\PYG{c+c1}{// NONMEMBER FUNCTIONS for the bag\PYGZlt{}Item\PYGZgt{} template class}
+\PYG{k}{template}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{Item}\PYG{o}{\PYGZgt{}}
+\PYG{n}{bag}\PYG{o}{\PYGZlt{}}\PYG{n}{Item}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{k}{operator}\PYG{+w}{ }\PYG{o}{+}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{bag}\PYG{o}{\PYGZlt{}}\PYG{n}{Item}\PYG{o}{\PYGZgt{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{b1}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{bag}\PYG{o}{\PYGZlt{}}\PYG{n}{Item}\PYG{o}{\PYGZgt{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{b2}\PYG{p}{);}
+
+\PYG{c+c1}{// The implementation of a template class must be included in its header file:}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZdq{}bag\PYGZus{}templated.template\PYGZdq{}}
+
+\PYG{c+cp}{\PYGZsh{}endif}
+\end{Verbatim}

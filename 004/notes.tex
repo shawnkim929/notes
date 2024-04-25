@@ -1,0 +1,241 @@
+\documentclass[11pt,a4paper,english]{paper}
+\usepackage{mathtools}
+\usepackage[breakable]{tcolorbox}
+\usepackage{minted}
+\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{blackbox}[1]{colback=black!5!white,colframe=black!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bluebox}[1]{colback=blue!5!white,colframe=blue!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{gbox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1,breakable}
+\usepackage{amsmath}                                    % extensive math options
+\usepackage{amssymb}                                    % special math symbols
+\usepackage[Gray,squaren,thinqspace,thinspace]{SIunits} % elegant units
+\usepackage{listings}                                   % source code
+
+\setminted{breaklines}
+
+\begin{document}
+
+\title{CS 008 \\ Lecture notes \\ 3/7/24}
+\maketitle
+
+\section{Outline}
+
+\begin{itemize}
+  \item Pointers \& Dynamic Arrays
+  \item New data structure (sequence)!
+\end{itemize}
+
+\section{Pointers}
+
+One of the most important concepts in C++ involves \textbf{pointers}. Pointers point to specific \textbf{address} in memory and expect a specific data type to be there. One consequence of pointers is the \textbf{Dynamic Array}.   \bigskip
+
+\subsection{Pointers}
+
+\bigskip
+
+\begin{bluebox}{Definition:} {
+
+    \bigskip
+    To \textbf{declare} a pointer, you can use the \textbf{*} symbol in front of the name of the variable.
+
+    \mintinline{cpp}{int *pointername;}
+
+    \bigskip
+
+    To \textbf{assign} a pointer, you can use the \& to set it to the \textbf{address} of a variable.
+    Pointer assignment:
+
+    \mintinline{cpp}{int *pointername = &pointtome;}
+
+    \bigskip
+
+    You can get and change a value that the pointer is pointing to by \textbf{dereferencing} the pointer using the \textbf{*} symbol.
+
+    \mintinline{cpp}{*pointername = 43;}
+
+    \bigskip
+    *pointer gets the value of the object it is pointing to. You can change this value too.
+
+  }
+\end{bluebox}
+
+\bigskip
+
+\subsection{Dynamic variables}
+
+We can use a pointer to initialize a variable. You can create a pointer of the proper type and then using the \textbf{new} character we can allocate a \textbf{dynamic variable}. Dynamic variables can only be accessed by a pointer.
+
+
+\bigskip 
+\begin{bluebox}{Example:} {
+    
+    \mintinline{cpp}{int* pointername = new int[100];}
+
+    \bigskip
+
+    Using \textbf{[]}, you can allocate a nameless array. Since the pointer points to a dynamic array, we can \textbf{access} and \textbf{assign} using \textbf{[]}. 
+  }
+\end{bluebox}
+
+\bigskip
+
+\noindent Using the symbol \textbf{[]}, you can allocate a dynamic array of a datatype. Similarly to the arrays we know, the dynamic arrays can be allocated with a certain amount of elements. Using \textbf{new} opens up the possibility for user-defined lengths on class members.
+
+
+\subsection{Delete}
+
+Deallocation is critical! When you use \textbf{new} somewhere, you need to use \textbf{delete} somewhere else.
+
+\bigskip
+\begin{mybox}{Warning:} {
+
+    Failure to deallocate dynamic variables will result in a \textbf{memory leak}. If it's bad enough, your machine will run out of memory and your program will crash.
+
+  }
+
+\end{mybox}
+\begin{bluebox}{Note:} {
+
+    When deleting dynamic arrays, be sure to use \mintinline{cpp}{delete[]} otherwise you will not delete the entire array.
+
+  }
+\end{bluebox}
+
+\subsection{Dynamic members}
+
+\noindent When defining a class with dynamic members, you must add:
+\bigskip
+\begin{itemize} {
+    \item A class copy constructor (\mintinline{cpp}{Sequence(const Sequence& other_sequence);})
+    \item An overloaded assignment operator (\mintinline{cpp}{void operator=(const Sequence& other_sequence);}) 
+    \item A class destructor (\mintinline{cpp}{~Sequence();})
+
+
+    }
+\end{itemize}
+
+\bigskip
+\noindent When working with dynamic variables, one of the things you need to do when defining a class with dynamic members, you must create a class copy constructor.
+
+\bigskip
+
+\begin{blackbox}{Example:} {
+
+\begin{minted}{cpp} {
+
+// Example class
+ class bag {
+  
+   // EXAMPLE
+
+   int used;
+   int* data_ptr = new int[30];
+  
+   // EXAMPLE
+
+ }
+
+  bag bag1 = ...;
+  bag bag2(bag1);
+
+\end{minted}
+\end{blackbox}
+
+\bigskip
+
+\noindent You need to have a class copy constructor since the copy might point to the same dynamic variables the original was pointing to. The default class copy constructor only creates a \textit{shallow} copy of the original. It grabs the values in the original member variables and then creates an identical copy. However, if they are both identical the data pointer in your copy object will point to the same piece of memory in your original object. To combat this, you create your own copy constructor and copy the contents of a dynamic array to a new dynamic array for the copy of the object.
+
+\bigskip
+
+\begin{mybox}{Warning:}{
+
+    You must define a copy constructor, assignment operator and a class destructor to avoid conflicting pointers. If you don’t include these elements, your code may still compile, but your memory management will be completely messed up.
+
+    \bigskip
+
+    \textbf{Bad errors will happen.}
+    \bigskip
+
+
+  }
+\end{mybox}
+
+\section{Sequence class}
+
+The sequence class is another \textbf{container} class. It is also very similar to the bag class seen earlier but unlike the bag class, it has a sense of ordering. There can be a 'first' element, 'second' element, ..., and 'last' element.
+
+\bigskip
+\noindent In constrast, the bag class is only a pile of elements. There is no specific ordering of elements in the bag.
+
+\bigskip
+\begin{gbox}{Question:}{
+
+    What is the dimensionality of the data in the Sequence class?
+
+    \bigskip
+    \textbf{Answer}: The Sequence class is one-dimensional. Compared to the bag class, the Sequence class has a sense of ordering. The position of the elements in the Sequence class can be described by a number unlike a bag.
+
+  }
+
+\end{gbox}
+
+\subsection{Misc.}
+
+Everytime you create a header file, you need to create a \textbf{header guard}. Header guards are used to avoid duplicate definitions.
+
+\bigskip
+
+\begin{bluebox}{Example: } {
+
+\begin{minted}{cpp} 
+
+#ifndef UNIQUE_NAME
+#define UNIQUE_NAME
+
+// contents
+
+#endif
+
+\end{minted}
+}
+\end{bluebox}
+
+\bigskip
+
+\noindent The first line of the header file checks if the UNIQUE NAME has already been defined. The second line then defines UNIQUE NAME and the contents of the file. When there is another header file trying to define UNIQUE NAME again, the contents of the header will be ignored.
+\bigskip
+
+\begin{blackbox}{Example:}{
+
+\begin{minted}{cpp} {
+
+  #ifndef SEQUENCE_H
+  #define SEQUENCE_H
+  #include <stddef.h>
+
+  class Sequence {
+    // ...
+
+   public:
+
+      typedef int value_type;
+      typedef size_t size_type;
+
+      static const size_t CAPACITY = 30;
+
+      Sequence();
+
+      //...
+
+  };
+  #endif
+
+\end{minted}
+
+    } 
+  \end{blackbox}
+
+
+
+  \end{document}
+

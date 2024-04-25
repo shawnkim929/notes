@@ -1,0 +1,52 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{decrement\PYGZus{}to\PYGZus{}zero}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{initial\PYGZus{}number}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{while}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{initial\PYGZus{}number}\PYG{+w}{ }\PYG{o}{\PYGZgt{}=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{cout}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Number is \PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{initial\PYGZus{}number}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}!\PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZlt{}\PYGZlt{}}\PYG{+w}{ }\PYG{n}{endl}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{initial\PYGZus{}number}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+
+
+\PYG{p}{\PYGZcb{}}\PYG{err}{\PYGZbs{}}\PYG{n}{end}\PYG{p}{\PYGZob{}}\PYG{n}{bbox}\PYG{p}{\PYGZcb{}}
+
+\PYG{err}{\PYGZbs{}}\PYG{n}{subsection}\PYG{p}{\PYGZob{}}\PYG{n}{Call}\PYG{+w}{ }\PYG{n}{Stack}\PYG{+w}{ }\PYG{n}{in}\PYG{+w}{ }\PYG{n}{C}\PYG{o}{++}\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{C}\PYG{o}{++}\PYG{+w}{ }\PYG{n}{has}\PYG{+w}{ }\PYG{n}{some}\PYG{+w}{ }\PYG{n}{memory}\PYG{+w}{ }\PYG{n}{known}\PYG{+w}{ }\PYG{n}{as}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{err}{\PYGZbs{}}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{call}\PYG{+w}{ }\PYG{n}{stack}\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{or}\PYG{+w}{ }\PYG{n}{just}\PYG{+w}{ }\PYG{n}{known}\PYG{+w}{ }\PYG{n}{as}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{err}{\PYGZbs{}}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{stack}\PYG{p}{\PYGZcb{}.}\PYG{+w}{ }\PYG{n}{The}\PYG{+w}{ }\PYG{n}{stack}\PYG{+w}{ }\PYG{n}{is}\PYG{+w}{ }\PYG{n}{where}\PYG{+w}{ }\PYG{n}{all}\PYG{+w}{ }\PYG{n}{variables}\PYG{+w}{ }\PYG{n}{within}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{local}\PYG{+w}{ }\PYG{n}{scope}\PYG{+w}{ }\PYG{n}{exists}\PYG{p}{.}\PYG{+w}{ }\PYG{n}{The}\PYG{+w}{ }\PYG{n}{scope}\PYG{+w}{ }\PYG{n}{contains}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{variables}\PYG{+w}{ }\PYG{n}{contained}\PYG{+w}{ }\PYG{n}{within}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{function}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{chunk}\PYG{+w}{ }\PYG{n}{of}\PYG{+w}{ }\PYG{n}{code}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{often}\PYG{+w}{ }\PYG{n}{within}\PYG{+w}{ }\PYG{p}{\PYGZob{}\PYGZcb{}).}\PYG{+w}{ }\PYG{n}{The}\PYG{+w}{ }\PYG{n}{stack}\PYG{+w}{ }\PYG{n}{contains}\PYG{+w}{ }\PYG{n}{local}\PYG{+w}{ }\PYG{n}{variables}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{within}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{n}{scope}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{but}\PYG{+w}{ }\PYG{n}{does}\PYG{+w}{ }\PYG{k}{not}\PYG{+w}{ }\PYG{n}{contain}\PYG{+w}{ }\PYG{n}{dynamic}\PYG{+w}{ }\PYG{n}{variables}\PYG{+w}{ }\PYG{n}{which}\PYG{+w}{ }\PYG{n}{are}\PYG{+w}{ }\PYG{n}{stored}\PYG{+w}{ }\PYG{n}{in}\PYG{+w}{ }\PYG{n}{heap}\PYG{+w}{ }\PYG{n}{memory}\PYG{p}{.}\PYG{+w}{ }\PYG{n}{It}\PYG{+w}{ }\PYG{n}{can}\PYG{+w}{ }\PYG{n}{also}\PYG{+w}{ }\PYG{n}{contain}\PYG{+w}{ }\PYG{n}{function}\PYG{+w}{ }\PYG{n}{calls}\PYG{+w}{ }\PYG{n}{which}\PYG{+w}{ }\PYG{n}{are}\PYG{+w}{ }\PYG{n}{stored}\PYG{+w}{ }\PYG{n}{until}\PYG{+w}{ }\PYG{n}{one}\PYG{+w}{ }\PYG{n}{finally}\PYG{+w}{ }\PYG{n}{returns}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{which}\PYG{+w}{ }\PYG{n}{ties}\PYG{+w}{ }\PYG{n}{into}\PYG{+w}{ }\PYG{n}{recursion}\PYG{p}{).}
+
+\PYG{err}{\PYGZbs{}}\PYG{n}{bigskip}
+\PYG{err}{\PYGZbs{}}\PYG{n}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{mybox}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{Note}\PYG{o}{:}\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{  }\PYG{n}{Dynamic}\PYG{+w}{ }\PYG{n+nf}{variables}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{ones}\PYG{+w}{ }\PYG{n}{created}\PYG{+w}{ }\PYG{n}{by}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{err}{\PYGZbs{}}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{k}{new}\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{n}{keyword}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{are}\PYG{+w}{ }\PYG{k}{not}\PYG{+w}{ }\PYG{n}{on}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{call}\PYG{+w}{ }\PYG{n}{stack}\PYG{p}{.}
+
+\PYG{p}{\PYGZcb{}}\PYG{err}{\PYGZbs{}}\PYG{n}{end}\PYG{p}{\PYGZob{}}\PYG{n}{mybox}\PYG{p}{\PYGZcb{}}
+
+\PYG{err}{\PYGZbs{}}\PYG{n}{bigskip}
+\PYG{err}{\PYGZbs{}}\PYG{n}{noindent}
+\PYG{n}{While}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{n}{function}\PYG{+w}{ }\PYG{n}{is}\PYG{+w}{ }\PYG{n}{running}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{variables}\PYG{+w}{ }\PYG{n}{are}\PYG{+w}{ }\PYG{n}{all}\PYG{+w}{ }\PYG{n}{stored}\PYG{+w}{ }\PYG{n}{on}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{stack}\PYG{p}{.}\PYG{+w}{ }\PYG{n}{If}\PYG{+w}{ }\PYG{n}{that}\PYG{+w}{ }\PYG{n}{first}\PYG{+w}{ }\PYG{n}{function}\PYG{+w}{ }\PYG{n}{calls}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{n}{second}\PYG{+w}{ }\PYG{n}{function}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{second}\PYG{+w}{ }\PYG{n}{function}\PYG{err}{\PYGZsq{}}\PYG{n}{s}\PYG{+w}{ }\PYG{n}{variables}\PYG{+w}{ }\PYG{n}{go}\PYG{+w}{ }\PYG{n}{onto}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{top}\PYG{+w}{ }\PYG{n}{of}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{stack}\PYG{p}{.}\PYG{+w}{ }\PYG{n}{Recall}\PYG{+w}{ }\PYG{n}{that}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{n}{stack}\PYG{+w}{ }\PYG{n}{is}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{err}{\PYGZbs{}}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{LIFO}\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{n}{data}\PYG{+w}{ }\PYG{n}{structure}\PYG{+w}{ }\PYG{k}{and}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{first}\PYG{+w}{ }\PYG{n}{function}\PYG{err}{\PYGZsq{}}\PYG{n}{s}\PYG{+w}{ }\PYG{n}{variables}\PYG{+w}{ }\PYG{n}{cannot}\PYG{+w}{ }\PYG{n}{be}\PYG{+w}{ }\PYG{n}{removed}\PYG{+w}{ }\PYG{n}{before}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{second}\PYG{+w}{ }\PYG{n}{function}\PYG{err}{\PYGZsq{}}\PYG{n}{s}\PYG{p}{.}
+
+\PYG{err}{\PYGZbs{}}\PYG{n}{bigskip}
+
+\PYG{err}{\PYGZbs{}}\PYG{n}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{mybox}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{Note}\PYG{o}{:}\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{    }\PYG{n}{The}\PYG{+w}{ }\PYG{n}{call}\PYG{+w}{ }\PYG{n}{stack}\PYG{+w}{ }\PYG{n}{is}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{reason}\PYG{+w}{ }\PYG{n}{why}\PYG{+w}{ }\PYG{n}{recursion}\PYG{+w}{ }\PYG{n}{usually}\PYG{+w}{ }\PYG{n}{ends}\PYG{+w}{ }\PYG{n}{up}\PYG{+w}{ }\PYG{k}{using}\PYG{+w}{ }\PYG{n}{more}\PYG{+w}{ }\PYG{n}{memory}\PYG{+w}{ }\PYG{n}{than}\PYG{+w}{ }\PYG{n}{it}\PYG{err}{\PYGZsq{}}\PYG{n}{s}\PYG{+w}{ }\PYG{n}{iterative}\PYG{+w}{ }\PYG{n}{counterpart}\PYG{p}{.}\PYG{+w}{ }\PYG{n}{When}\PYG{+w}{ }\PYG{n}{there}\PYG{+w}{ }\PYG{n}{are}\PYG{+w}{ }\PYG{n}{too}\PYG{+w}{ }\PYG{n}{many}\PYG{+w}{ }\PYG{n}{functions}\PYG{err}{\PYGZsq{}}\PYG{+w}{ }\PYG{n}{variables}\PYG{+w}{ }\PYG{n}{being}\PYG{+w}{ }\PYG{n}{stored}\PYG{+w}{ }\PYG{n}{on}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{stack}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{it}\PYG{+w}{ }\PYG{n}{can}\PYG{+w}{ }\PYG{n}{use}\PYG{+w}{ }\PYG{n}{up}\PYG{+w}{ }\PYG{n}{all}\PYG{+w}{ }\PYG{n}{available}\PYG{+w}{ }\PYG{n}{memory}\PYG{+w}{ }\PYG{n}{on}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{call}\PYG{+w}{ }\PYG{n}{stack}\PYG{+w}{ }\PYG{k}{and}\PYG{+w}{ }\PYG{n}{creates}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{err}{\PYGZbs{}}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{segmentation}\PYG{+w}{ }\PYG{n}{fault}\PYG{p}{\PYGZcb{}.}\PYG{+w}{ }\PYG{n}{Having}\PYG{+w}{ }\PYG{n}{too}\PYG{+w}{ }\PYG{n}{much}\PYG{+w}{ }\PYG{n}{on}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{stack}\PYG{+w}{ }\PYG{n}{can}\PYG{+w}{ }\PYG{n}{create}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{err}{\PYGZbs{}}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{stack}\PYG{+w}{ }\PYG{n}{overflow}\PYG{p}{\PYGZcb{}.}
+
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{err}{\PYGZbs{}}\PYG{n}{end}\PYG{p}{\PYGZob{}}\PYG{n}{mybox}\PYG{p}{\PYGZcb{}}
+
+\PYG{err}{\PYGZbs{}}\PYG{n}{bigskip}
+
+\PYG{err}{\PYGZbs{}}\PYG{n}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{bbox}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{Figure}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{o}{:}\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{  }\PYG{c+c1}{// Factorial iterative and recursive}
+
+\PYG{p}{\PYGZcb{}}\PYG{err}{\PYGZbs{}}\PYG{n}{end}\PYG{p}{\PYGZob{}}\PYG{n}{bbox}\PYG{p}{\PYGZcb{}}
+
+\PYG{err}{\PYGZbs{}}\PYG{n}{subsection}\PYG{p}{\PYGZob{}}\PYG{n}{Tail}\PYG{+w}{ }\PYG{n}{recursion}\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{The}\PYG{+w}{ }\PYG{n}{function}\PYG{+w}{ }\PYG{n}{that}\PYG{+w}{ }\PYG{n}{is}\PYG{+w}{ }\PYG{n}{called}\PYG{+w}{ }\PYG{n}{recursively}\PYG{+w}{ }\PYG{n}{should}\PYG{+w}{ }\PYG{n}{have}\PYG{+w}{ }\PYG{n}{one}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{statement}\PYG{+w}{ }\PYG{k}{and}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{should}\PYG{+w}{ }\PYG{n}{be}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{last}\PYG{+w}{ }\PYG{n}{line}\PYG{+w}{ }\PYG{n}{in}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{function}\PYG{p}{.}\PYG{+w}{ }\PYG{n}{The}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{statement}\PYG{+w}{ }\PYG{n}{should}\PYG{+w}{ }\PYG{k}{not}\PYG{+w}{ }\PYG{n}{perform}\PYG{+w}{ }\PYG{n}{any}\PYG{+w}{ }\PYG{n}{computation}\PYG{+w}{ }\PYG{n}{of}\PYG{+w}{ }\PYG{n}{it}\PYG{err}{\PYGZsq{}}\PYG{n}{s}\PYG{+w}{ }\PYG{n}{own}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{it}\PYG{+w}{ }\PYG{n}{needs}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{n}{be}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{n}{pure}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{statement}\PYG{+w}{ }\PYG{n}{that}\PYG{+w}{ }\PYG{n}{just}\PYG{+w}{ }\PYG{n}{passes}\PYG{+w}{ }\PYG{n}{in}\PYG{+w}{ }\PYG{n}{values}\PYG{p}{).}\PYG{+w}{ }\PYG{n}{Some}\PYG{+w}{ }\PYG{n}{of}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{ways}\PYG{+w}{ }\PYG{n}{to}\PYG{+w}{ }\PYG{n}{help}\PYG{+w}{ }\PYG{n}{with}\PYG{+w}{ }\PYG{n}{writing}\PYG{+w}{ }\PYG{n}{tail}\PYG{+w}{ }\PYG{n}{recursive}\PYG{+w}{ }\PYG{n}{functions}\PYG{+w}{ }\PYG{n}{involve}\PYG{+w}{ }\PYG{n}{helper}\PYG{+w}{ }\PYG{n}{functions}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ternary}\PYG{+w}{ }\PYG{n}{operators}\PYG{+w}{ }\PYG{k}{and}\PYG{+w}{ }\PYG{n}{accumulators}\PYG{p}{.}
+
+\PYG{err}{\PYGZbs{}}\PYG{n}{bigskip}
+\PYG{err}{\PYGZbs{}}\PYG{n}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{bbox}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{Figure}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{o}{:}\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\end{Verbatim}

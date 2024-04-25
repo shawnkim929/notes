@@ -1,0 +1,32 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\beamer@sectionpages {1}{1}}
+\headcommand {\beamer@subsectionpages {1}{1}}
+\headcommand {\sectionentry {1}{Announcements}{2}{Announcements}{0}}
+\headcommand {\beamer@sectionpages {2}{1}}
+\headcommand {\beamer@subsectionpages {2}{1}}
+\headcommand {\sectionentry {2}{Bag class review}{2}{Bag class review}{0}}
+\headcommand {\beamer@subsectionpages {2}{2}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{3}{Typedef}}
+\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{4}{Static}}
+\headcommand {\beamer@subsectionpages {4}{4}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{5}{Inline definitions}}
+\headcommand {\beamer@subsectionpages {5}{5}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{6}{Include}}
+\headcommand {\beamer@subsectionpages {6}{5}}
+\headcommand {\beamer@subsectionentry {0}{2}{5}{6}{Pass by reference}}
+\headcommand {\beamer@subsectionpages {6}{5}}
+\headcommand {\beamer@subsectionentry {0}{2}{6}{6}{std::copy}}
+\headcommand {\beamer@sectionpages {2}{6}}
+\headcommand {\beamer@subsectionpages {6}{6}}
+\headcommand {\sectionentry {3}{Additional stuff}{7}{Additional stuff}{0}}
+\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{7}{Overloading an operator}}
+\headcommand {\beamer@subsectionpages {7}{6}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{7}{Sequence class}}
+\headcommand {\beamer@partpages {1}{7}}
+\headcommand {\beamer@subsectionpages {7}{7}}
+\headcommand {\beamer@sectionpages {7}{7}}
+\headcommand {\beamer@documentpages {7}}
+\headcommand {\gdef \inserttotalframenumber {1}}

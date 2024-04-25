@@ -1,0 +1,128 @@
+\documentclass[11pt,a4paper,english]{paper}
+\usepackage{mathtools}
+\usepackage[breakable]{tcolorbox}
+%\usepackage{minted}
+\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bluebox}[1]{colback=blue!5!white,colframe=blue!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{gbox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bbox}[1]{colback=black!5!white,colframe=black!75!black,fonttitle=\bfseries,title=#1,breakable}
+\usepackage{amsmath}                                    % extensive math options
+\usepackage{amssymb}                                    % special math symbols
+\usepackage[mathlines]{lineno}
+\usepackage[Gray,squaren,thinqspace,thinspace]{SIunits} % elegant units
+\usepackage{listings}                                   % source code
+
+\usepackage{graphicx}
+\graphicspath{ {./} }
+%\setminted{breaklines}
+
+\begin{document}
+
+\title{CS 008 \\ Lecture notes \\ 4/9/24}
+\maketitle
+
+\section{Outline}
+
+\begin{itemize} {
+
+    \item Trees part 2
+    \item Binary trees
+
+}\end{itemize}
+
+\section{Trees Review}
+
+\textbf{Trees} are a series of nodes where one node is the root node to the tree. Every other node apart from the root node will have a parent node. All nodes are connected in some way and the connections between the nodes can be in any direction. Also, nodes usually don't know the other child nodes of the parent.
+
+\bigskip
+\begin{bluebox}{Definitions:}{
+
+  \begin{itemize} {
+
+      \item \textbf{Parent}: A node that points to another node.
+      \item \textbf{Child}: A node that is pointed to by a parent node.
+      \item \textbf{Leaf}: These are nodes that do not point to another node.
+      \item \textbf{Height \& Depth}: These are the height and depth of the tree which represent the amount of nodes followed to reach the bottom for the height or a certain node for the depth. The root node is not included in the height and depth of a tree.
+      \item \textbf{Subtree}: A portion of the tree can be also be a tree (ignoring the parent nodes of the root of the subtree to create the subtree).
+
+  }\end{itemize}
+
+}\end{bluebox}
+
+\bigskip
+
+
+\section{Binary Tree}
+
+A binary tree is just a type of tree with up to two children.
+
+\bigskip
+
+\noindent\textbf{Full binary tree.}
+
+Every leaf is at the same depth and every non-leaf has two children.
+
+\bigskip
+\noindent\textbf{Complete binary tree.}
+
+All non-leaves (except maybe one) have two children. All leaves have the same depth $\pm$1 and any level of the tree that is not full has nodes arranged in the left most possible spots.
+
+\subsection{Representation of a binary tree}
+
+We can represent a tree in memory as either an array or a linked list of nodes. A node-based binary tree should have the following node structure:
+
+\bigskip
+
+\begin{bbox}{Figure 1:} {
+
+struct node ...
+
+
+  }
+\end{bbox}
+
+\subsection{Traversals}
+
+There are three algorithms for traversing a tree:
+
+\bigskip
+
+\begin{itemize} {
+
+    \item \textbf{Pre-order:} (Parent, Left sub-tree, Right sub-tree)
+    \item \textbf{In-order:} (Left sub-tree, Parent, Right sub-tree)
+    \item \textbf{Post-order:} (Left sub-tree, Right sub-tree, Parent)
+
+}\end{itemize}
+
+\bigskip
+
+\begin{gbox}{Question:} {
+
+  What is the time complexity of the search(x) operation on a random tree?
+
+  \bigskip\textbf{Answer}: $O(n)$ would be the time complexity since we would have to (in the worst case) check every node for the value.
+
+
+}\end{gbox}
+
+\subsection{Binary Search Tree}
+
+Recall the \textbf{Binary Search} for a sorted array. With a sorted array, you can use binary search where you start in the middle of the array and divide the array each time by half until you find your desired result.
+
+\bigskip
+\begin{gbox}{Question:} {
+
+    What is the time complexity of \textbf{Binary Search} on a sorted array?
+
+    \bigskip
+    \textbf{Answer}: It would have a time complexity of $O(log(n))$.
+
+}\end{gbox}
+
+\bigskip
+
+Note that a binary search only works in an ordered array (keep this in mind). For a binary search tree, the left node in a parent node would be smaller than the parent node but the right node would be the largest. So, in other words, instead of checking all nodes in the tree, we could simply look at values of the node we are currently in and move through the tree based off of the value we are searching for. This significantly shortens the time complexity of searching for a value and excludes parts of the tree we know will not contain the value.
+
+
+\end{document}

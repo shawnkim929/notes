@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{c+cp}{\PYGZsh{}ifndef UNIQUE\PYGZus{}NAME}
+\PYG{c+cp}{\PYGZsh{}define UNIQUE\PYGZus{}NAME}
+
+\PYG{c+c1}{// contents}
+
+\PYG{c+cp}{\PYGZsh{}endif}
+
+\end{Verbatim}

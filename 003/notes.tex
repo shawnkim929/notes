@@ -1,0 +1,142 @@
+\documentclass[11pt,a4paper,english]{paper}
+\usepackage{mathtools}
+\usepackage[breakable]{tcolorbox}
+\usepackage{minted}
+\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bluebox}[1]{colback=blue!5!white,colframe=blue!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{gbox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1,breakable}
+\usepackage{amsmath}                                    % extensive math options
+\usepackage{amssymb}                                    % special math symbols
+\usepackage[Gray,squaren,thinqspace,thinspace]{SIunits} % elegant units
+\usepackage{listings}                                   % source code
+
+\setminted{breaklines}
+
+\begin{document}
+
+\title{CS 008 \\ Lecture notes \\ 3/5/24}
+\maketitle
+
+\section{Announcements}
+
+More office hours from 4-5 pm (Monday, Wednesday, Friday) on Zoom. Curriculum is being rewritten from scratch, feedback appreciated. Starting Thursday, there will be assigned readings before lecture instead of slides.
+
+\bigskip
+
+\begin{mybox}{Note:} {
+Please get the assigned textbook for free, you can talk to other classmates to figure out how to get it for free:
+}
+\end{mybox}
+
+\bigskip
+
+\noindent There is also a summer internship opportunity with Snapchat for community college students (snapacademies.org)
+
+\section{Bag class review}
+
+There is a section where you were instructed to make a keyed bag class. Use the built in C++ "pair" class \textit{(See Main and Savitch, Section 2.6, page 85)}
+
+\bigskip
+\begin{bluebox}{Announcement} {
+There are some modifications in the bag.h  and bag.cpp files and some notes in Canvas: Look for "Lab 2: Bag Class w/ extra comments " in the week 2 module on Canvas. The original bag files could also be found in the textbook.
+}
+\end{bluebox}
+\bigskip
+The bag class is basically a way to store unrelated items in one 'container'. The goal of the class is to act as a container class for objects. The bag class is considered a zero-dimensional container class because each piece of data is completely independent of each other. There is no structure among these items inside the bag. Also, the order in the bag does not matter but the state of the bag does.
+\bigskip
+
+\subsection{Typedef}
+
+\begin{gbox}{Question:} {
+
+Why is typedef used in the bag class?
+
+\bigskip
+
+\textbf{Answer}: We use typedef because we may want to change this type later to accommidate a different datatype. Part of it is for ease of programmer development, but in addition, built in container classes often use value\_type and size\_type.
+
+
+  }
+\end{gbox}
+
+\bigskip
+
+\begin{mybox}{Warning:} {
+
+    Do not include (\mintinline{cpp}{using namespace std;}) in a header file.
+
+  \bigskip
+
+  Only use it in implementation files where it makes sense, putting it in the header file would force people to use it when they include your header file.
+  }
+
+\end{mybox}
+
+\bigskip
+
+In the bag class, you may notice the data type size\_t. This data type can only hold non-negative numbers and also guarantees that the values of the size\_t type can hold the size of any variable that can be declared on your machine. Basically, size\_t is a positive integer that changes it's size depending on the machine it is on.
+
+\subsection{Static}
+
+You might notice \mintinline{cpp}{static const size_type CAPACITY = 30;} in the bag class. \textbf{Static} allows a value to be 'static', it is the same in every instance of the class. Static variables is the one copy of a variable that is shared between all instances of a class. Basically, all instances (objects) of a class would reference the same value for a static variable, when changed it will be the new value for all instances. 
+
+\bigskip
+
+The keyword \textbf{const} is added to make it a constant value that cannot be changed. In combination with static, the variable is shared between all instances of the class and is also constant.
+
+\bigskip
+
+\begin{bluebox}{Definition:} {
+
+    Static variables are variables that are shared between all instances of a class. 
+
+  }
+\end{bluebox}
+
+\subsection{Inline definitions}
+
+Notice how in the bag class, the size method is written in only one line of code. For really small methods, you can write your method in one line. This is known as an \textbf{inline definition}.
+\bigskip
+
+\begin{mybox}{Warning:}{
+Do not use inline definitions for large methods.
+  }
+\end{mybox}
+
+\subsection{Include}
+
+One of the methods that is used that is included in the program is \textbf{assert}. The purpose of assert is to check if a condition is true or false. If the condition is false, assert will create an error in the program.
+
+\bigskip
+
+\noindent Unlike an if-statement, assert will create an error in the program when the condition inside it is false. It kills the program with an error.
+
+\subsection{Pass by reference}
+
+In the bag.cpp file, the symbol (\&) is used to make the parameter in the method pass-by-reference. With pass-by-reference, the parameter given in a method would be a reference of the parameter and not a copy of a parameter. With the addition of const, you would be passing in a reference to a variable that cannot be modified to a method.
+
+\subsection{std::copy}
+
+When you pass an array to a function, it becomes a pointer. It becomes a pointer to the function that points to the first element of an array. In the bag class, the overloading of the += operator uses std::copy. It's used to copy the array from the first element and then finds the element \textbf{used} amount away from the first element and then copies it over to after the \textit{used} element in the array. 
+
+
+\section{Additional stuff}
+
+\subsection{Overloading an operator}
+
+There are 2 (maybe 2.5) different methods for overloading an operator.
+
+\begin{itemize} {
+  
+    \item Overloading with a class member function
+    \item Overloading with a nonmember function
+    \item Overloading with a friend nonmember function
+  
+  }
+\end{itemize}
+
+\subsection{Sequence class}
+
+Sequence is another container class: Extra assignment since there's no time for the lecture
+
+\end{document}

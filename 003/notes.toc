@@ -1,0 +1,11 @@
+\beamer@sectionintoc {1}{Announcements}{2}{0}{1}
+\beamer@sectionintoc {2}{Bag class review}{2}{0}{2}
+\beamer@subsectionintoc {2}{1}{Typedef}{3}{0}{2}
+\beamer@subsectionintoc {2}{2}{Static}{4}{0}{2}
+\beamer@subsectionintoc {2}{3}{Inline definitions}{5}{0}{2}
+\beamer@subsectionintoc {2}{4}{Include}{6}{0}{2}
+\beamer@subsectionintoc {2}{5}{Pass by reference}{6}{0}{2}
+\beamer@subsectionintoc {2}{6}{std::copy}{6}{0}{2}
+\beamer@sectionintoc {3}{Additional stuff}{7}{0}{3}
+\beamer@subsectionintoc {3}{1}{Overloading an operator}{7}{0}{3}
+\beamer@subsectionintoc {3}{2}{Sequence class}{7}{0}{3}

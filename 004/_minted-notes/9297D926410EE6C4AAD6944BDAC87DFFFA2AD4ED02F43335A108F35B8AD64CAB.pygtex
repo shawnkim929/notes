@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{c+c1}{// Example class}
+\PYG{+w}{ }\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{bag}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{   }\PYG{c+c1}{// EXAMPLE}
+
+\PYG{+w}{   }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{used}\PYG{p}{;}
+\PYG{+w}{   }\PYG{k+kt}{int}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{data\PYGZus{}ptr}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{p}{[}\PYG{l+m+mi}{30}\PYG{p}{];}
+
+\PYG{+w}{   }\PYG{c+c1}{// EXAMPLE}
+
+\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{  }\PYG{n}{bag}\PYG{+w}{ }\PYG{n}{bag1}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{...;}
+\PYG{+w}{  }\PYG{n}{bag}\PYG{+w}{ }\PYG{n+nf}{bag2}\PYG{p}{(}\PYG{n}{bag1}\PYG{p}{);}
+
+\end{Verbatim}

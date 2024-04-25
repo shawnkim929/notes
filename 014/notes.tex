@@ -1,0 +1,75 @@
+\documentclass[11pt,a4paper,english]{paper}
+\usepackage{mathtools}
+\usepackage[breakable]{tcolorbox}
+%\usepackage{minted}
+\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bluebox}[1]{colback=blue!5!white,colframe=blue!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{gbox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bbox}[1]{colback=black!5!white,colframe=black!75!black,fonttitle=\bfseries,title=#1,breakable}
+\usepackage{amsmath}                                    % extensive math options
+\usepackage{amssymb}                                    % special math symbols
+\usepackage[mathlines]{lineno}
+\usepackage[Gray,squaren,thinqspace,thinspace]{SIunits} % elegant units
+\usepackage{listings}                                   % source code
+
+\usepackage{graphicx}
+\graphicspath{ {./} }
+%\setminted{breaklines}
+
+\begin{document}
+
+\title{CS 008 \\ Lecture notes \\ 4/11/24}
+\maketitle
+
+\section{Outline}
+
+\begin{itemize}
+
+  \item Binary tree (recap)
+  \item Data structures (Sequences vs Sets)
+  \item Balanced (AVL) Trees (Subset of Binary Trees) (Skew \& Rotate)
+
+\end{itemize}
+
+\section{Binary Tree}
+
+Traversal Order (In-order) goes from Left-Subtree $\rightarrow$ Parent $\rightarrow$ Right-Subtree.
+
+\bigskip
+\begin{bluebox}{Operations for Binary Trees:} {
+\begin{itemize} {
+
+\item first\_in\_subtree(node): find first node in the subtree defined by node
+\item last\_in\_subtree(node)
+\item successor(node): find the next node in traversal order after node
+\item predecessor(node)
+\item insert\_after(existing\_node, new\_node): insert new\_node in traversal order
+\item insert\_before(existing\_node, new\_node)
+\item delete(node): remove node from the tree while maintaining traversal order
+
+}\end{itemize}
+}\end{bluebox}
+
+\bigskip
+\noindent Details on implementation would've been added but they've already been mentioned multiple times before in lectures and can be googled at this point if it's not intuitive.
+
+\section{Data structure theory}
+
+Insert table
+
+
+\bigskip
+\noindent Notice how with some functions of certain implementations, we see a 1(a) time complexity. The $a$ stands for the amortized (aka: average) time because for example, if we had a dynamic array, there is a chance we need to extend the dynamic array.
+
+\bigskip
+\subsection{Set Binary Tree (BST)} 
+
+One property of sets is the ability to also have keys. A binary search tree is considered a 'keyed' set where it is sorted by the key / value to determine it's position in the tree. Using a binary search tree, you can implement an entire set interface by just adding a key.
+
+\subsection{Sequence Binary Tree}
+
+Similarly to how a BST can be used to implement a set, the traversal order of the binary tree is also the sequence order.
+
+\section{AVL Trees}
+
+\end{document}

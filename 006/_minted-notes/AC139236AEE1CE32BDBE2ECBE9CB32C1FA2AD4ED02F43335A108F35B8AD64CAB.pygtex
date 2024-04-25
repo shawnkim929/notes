@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{node}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{  }\PYG{n}{node}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{next}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{node}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{previous}\PYG{p}{;}
+\PYG{+w}{  }\PYG{p}{(}\PYG{n}{data}\PYG{+w}{ }\PYG{n}{type}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{data}\PYG{p}{;}
+
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

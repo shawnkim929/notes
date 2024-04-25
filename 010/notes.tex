@@ -1,0 +1,113 @@
+\documentclass[11pt,a4paper,english]{paper}
+\usepackage{mathtools}
+\usepackage[breakable]{tcolorbox}
+%\usepackage{minted}
+\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bluebox}[1]{colback=blue!5!white,colframe=blue!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{gbox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bbox}[1]{colback=black!5!white,colframe=black!75!black,fonttitle=\bfseries,title=#1,breakable}
+\usepackage{amsmath}                                    % extensive math options
+\usepackage{amssymb}                                    % special math symbols
+\usepackage[mathlines]{lineno}
+\usepackage[Gray,squaren,thinqspace,thinspace]{SIunits} % elegant units
+\usepackage{listings}                                   % source code
+
+\usepackage{graphicx}
+\graphicspath{ {./} }
+%\setminted{breaklines}
+
+\begin{document}
+
+\title{CS 008 \\ Lecture notes \\ 3/28/24}
+\maketitle
+
+\section{Outline}
+
+\begin{itemize} {
+
+    \item Trees
+    \item Binary Trees
+    \item Git
+
+}\end{itemize}
+
+\section{Trees}
+
+\textbf{Trees} are a series of nodes where one node is the root node to the tree. Every other node apart from the root node will have a parent node. All nodes are connected in some way and the connections between the nodes go in one direction.
+
+\bigskip
+\begin{bluebox}{Definitions:}{
+
+  \begin{itemize} {
+
+      \item \textbf{Parent}: A node that points to another node.
+      \item \textbf{Child}: A node that is pointed to by a parent node.
+      \item \textbf{Leaf}: These are nodes that do not point to another node.
+      \item \textbf{Height \& Depth}: These are the height and depth of the tree which represent the amount of nodes followed to reach the bottom for the height or a certain node for the depth. The root node is not included in the height and depth of a tree.
+      \item \textbf{Subtree}: A portion of the tree can be also be a tree (ignoring the parent nodes of the root of the subtree to create the subtree).
+
+  }\end{itemize}
+
+}\end{bluebox}
+
+\bigskip
+
+\subsection{Taxonomy}
+
+There are many different types of trees that exist. Some of them include:
+\begin{itemize} {
+
+    \item Binary Trees
+    \item N-ary trees
+    \item Heaps
+
+}\end{itemize}
+
+\section{Binary Trees}
+
+A binary tree is a tree where the nodes in the tree would have 2 or fewer child nodes. There are two adjectives that can be used to describe a binary tree.
+
+\subsection{Full binary trees}
+
+A full binary tree is a binary tree where every leaf is at the same path and every non-leaf has two children.
+
+\subsection{Complete binary trees}
+
+All leaves have the same or atleast within one depth from each other in a complete binary tree. All non-leaves of a complete binary tree (with the exception of maybe one non-leaf) have two children. Any level of the tree that is not full has nodes that are arranged in the left most spots. With this, a complete binary tree would have a right and a left child node for parent nodes.
+
+\subsection{Implementation}
+
+A binary tree can be implemented as either an array or a linked list of nodes. The array implementation of the binary tree is simply just an ordered array of the nodes by number (so if we had a tree where the root is considered 1 and the children are 2 and 3, the array representation would be 1, 2, 3).
+
+\bigskip
+
+\begin{bbox}{Figure 1:}
+
+
+    / Tree example
+
+  \end{bbox}
+
+  \bigskip
+
+\noindent For the array implementation, the time complexity of getting a node or getting a root of the tree would be O(1). With the linked list implementation, looking for a specific node in the linked list implementation would be O(n). Looking for the value of the root is still O(1) even in the linked list implemenation.
+
+
+\bigskip
+\noindent Traversing the tree to look for a value is of the time complexity $O(\log_{2}(n))$, since the most amount of pointers is actually related to the depth of the value in the tree. Traversal of a tree is not linear but it is also not a constant time since the time complexity is still dependant on the amount of nodes. However, since the amount of nodes grows exponentially larger than the worst case number of operations. 
+
+\subsection{Traversals}
+
+A traversal is bidirectional, it is the idea of following the pointers in the nodes. There are three algorithms for traversing a tree consisting of:
+\begin{itemize} {
+
+  \item Pre-order
+  \item In-order
+  \item Post-order
+
+}\end{itemize}
+
+
+
+
+\end{document}

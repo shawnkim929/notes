@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{x}{void decrement\PYGZus{}to\PYGZus{}zero(int initial\PYGZus{}number) \PYGZob{}}
+\PYG{x}{    while (initial\PYGZus{}number \PYGZgt{}= 0) \PYGZob{}}
+\PYG{x}{        cout \PYGZlt{}\PYGZlt{} \PYGZdq{}Number is \PYGZdq{} \PYGZlt{}\PYGZlt{} initial\PYGZus{}number \PYGZlt{}\PYGZlt{} \PYGZdq{}!\PYGZdq{} \PYGZlt{}\PYGZlt{} endl;}
+\PYG{x}{        initial\PYGZus{}number\PYGZhy{}\PYGZhy{};}
+\PYG{x}{    \PYGZcb{}}
+\PYG{x}{\PYGZcb{}}
+
+\end{Verbatim}

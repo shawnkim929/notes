@@ -1,0 +1,173 @@
+\documentclass[11pt,a4paper,english]{paper}
+\usepackage{mathtools}
+\usepackage[breakable]{tcolorbox}
+%\usepackage{minted}
+\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bluebox}[1]{colback=blue!5!white,colframe=blue!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{gbox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bbox}[1]{colback=black!5!white,colframe=black!75!black,fonttitle=\bfseries,title=#1,breakable}
+\usepackage{amsmath}                                    % extensive math options
+\usepackage{amssymb}                                    % special math symbols
+\usepackage[mathlines]{lineno}
+\usepackage[Gray,squaren,thinqspace,thinspace]{SIunits} % elegant units
+\usepackage{listings}                                   % source code
+
+\usepackage{graphicx}
+\graphicspath{ {./} }
+%\setminted{breaklines}
+
+\begin{document}
+
+\title{CS 008 \\ Lecture notes \\ 3/21/24}
+\maketitle
+
+\section{Outline}
+
+\begin{itemize} {
+
+    \item Big-O notation (again)
+    \item Infix, Prefix, Postfix Notation
+    \item Queues (Circular array implementation)
+
+} \end{itemize}
+
+\section{Big-O worksheet}
+
+Some of the problems on the worksheet will be proof based:
+
+\bigskip
+
+\begin{bluebox}{Definition:} {
+
+    Formal definition of Big-O notation:
+
+    \bigskip
+
+    $f(n) \in O(g(n))$ if $f(n) \leq kg(n)$ for all $n \geq N$ where $k$ and $N$ represent arbitrary constants.
+
+    \bigskip
+
+    If we choose a value $N$ that represents a specific number for operations, if we can express $f(N)$ as a scalar multiple of $g(N)$ (multipled by the scalar $k$), $f(n)$ would be of the same time complexity of $g(n)$.
+
+}\end{bluebox}
+
+\bigskip
+
+The formal definition of the Big-O notation means that if we can find a value $k$ that can be multipled by the function $g(N)$ to get the same \textit{(or bigger)} value than $f(N)$, then $f(n)$ has a time complexity of $O(g(n))$. 
+
+\bigskip
+
+
+\begin{bbox}{Example:} {
+
+    \textbf{Proof}: If $f(n) \in O(g(n))$ and $g(n) \in O(h(n))$, then $f(n)$ is $O(h(n))$.
+
+    \bigskip 
+
+    We know $f(n) \leq G_{1}g(n)$ for all $n \geq N_{1}$ and $g(n) \leq G_{2}h(n)$ for all $n \geq N_{2}$.
+
+    We want to show that $f(n) \leq G_{3}h(n)$ for all $n \leq N_{3}$
+
+    \bigskip
+
+    \textbf{Define}: $N_{3} = max(N_1, N_2)$
+
+    Plugging in for the inequality:
+
+    \bigskip
+
+    \center $f(n) \leq G_{1}g(n) \leq G_{1}G_{2}h(n)$ for all $n \geq N_{3}$
+
+
+}\end{bbox}
+
+\section{Infix, Prefix, Postfix}
+
+Infix notation examples:
+
+\begin{itemize} {
+
+    \item $2+2$
+    \item $3*4$
+    \item $2^3$
+
+}\end{itemize}
+
+\bigskip
+\noindent Prefix examples:
+
+\begin{itemize} {
+
+  \item $+22$
+  \item $*34$
+  \item \^{}$23$
+
+}\end{itemize}
+
+\bigskip
+
+\noindent Postfix examples:
+\begin{itemize} {
+
+  \item $22+$
+  \item $24*$
+  \item $23$\^{}
+
+}\end{itemize}
+
+\subsection{Infix to Postfix conversion}
+
+We can convert from infix notation to postfix notation through the use of a stack:
+\bigskip
+
+\begin{bbox}{Algorithm:} {
+
+  Consider a regular infix expression (ex: a - b + c) and consider an empty list that we will consider to be our \textbf{postfix} expression.
+
+  \bigskip
+    \begin{itemize} {
+        \item \textbf{Step 1}: Tokenize the expression (split up the numbers, variables, operators and parentheses... etc)
+
+  \item \textbf{Step 2}: Push the parentheses into the stack '(' and ')'
+
+  \item \textbf{Step 3}: Repeat the following steps \textbf(4-7) if you find a token (numbers, operators and parentheses)
+
+  \item \textbf{Step 4}: If you find a '(' token, add it to the top of the stack
+
+  \item \textbf{Step 5}: If you find a ')' token, pop the operators that we pushed into the stack (from the top) until we find a '('. Append (add onto the end of the list) the tokens to the postfix expression.
+
+  \item \textbf{Step 6}: If you find an operator, check the top of the stack and if the operator in the stack is of equal or greater precedence than the one found, pop it and append it to the postfix expression. The found operator is then pushed to the top of the stack.
+
+  \item \textbf{Step 7}: If the token is a value (number or variable), append it to the postfix expression.
+}\end{itemize}
+  \bigskip
+
+
+}\end{bbox}
+
+\section{Queue}
+
+A \textbf{Queue} is an abstract data type similar to a \textbf{stack}, however unlike a stack, a queue is \textbf{FIFO} \textit{(first in, first out)}.
+
+\bigskip
+\begin{bluebox}{ADT Definition:} {
+
+    \textbf{push (dequeue)}: Add element (to the rear of the queue)
+
+    \textbf{pop (enqueue)}: Remove an element from the front of the queue
+
+    \textbf{front}: View the first element in the queue
+
+    \textbf{empty}: Check if the queue is empty
+
+    \textbf{Size}: Get the number of elements in the queue
+
+
+}\end{bluebox}
+
+\subsection{Circular Arrays}
+
+When working with a limited sized queue, one of the issues when popping the beginning of the queue is figuring out what to do with the empty space where the front used to be. We could shift the entire array to have the front at the beginning of the array to fill in the empty space however it is not efficient (because we'd have to have an entire $O(n)$ operation to shift this). To solve this problem, at the end of the array, we go back to the beginning of the array (not the front of the queue since we're assuming there's still 'space' in the queue). As a result, we don't have to deal with the shifting of the array and we could simply just go back to that empty space we had in the beginning of the array.
+
+
+\end{document}
