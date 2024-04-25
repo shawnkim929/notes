@@ -1,0 +1,40 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{class}\PYG{+w}{ }\PYG{n+nc}{bag}
+\PYG{p}{\PYGZob{}}
+\PYG{k}{public}\PYG{o}{:}
+\PYG{+w}{	}\PYG{n}{bag}\PYG{p}{();}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{k}{typedef}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{value\PYGZus{}type}\PYG{p}{;}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c+c1}{//size\PYGZus{}t data type is an integer data type that can hold}
+\PYG{+w}{	}\PYG{c+c1}{//only non\PYGZhy{}negative numbers.  Each C++ implementation}
+\PYG{+w}{	}\PYG{c+c1}{//guarantees that the values of the size\PYGZus{}t type can hold the}
+\PYG{+w}{	}\PYG{c+c1}{//size of any variable that can be declared on your machine.}
+\PYG{+w}{	}\PYG{k}{typedef}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{::}\PYG{k+kt}{size\PYGZus{}t}\PYG{+w}{ }\PYG{n}{size\PYGZus{}type}\PYG{p}{;}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{k}{static}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{size\PYGZus{}type}\PYG{+w}{ }\PYG{n}{CAPACITY}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{30}\PYG{p}{;}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{n}{size\PYGZus{}type}\PYG{+w}{ }\PYG{n+nf}{size}\PYG{p}{()}\PYG{+w}{ }\PYG{k}{const}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{insert}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{value\PYGZus{}type}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{entry}\PYG{p}{);}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{n}{size\PYGZus{}type}\PYG{+w}{ }\PYG{n+nf}{count}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{value\PYGZus{}type}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{target}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{const}\PYG{p}{;}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c+c1}{//provided the target is actually in the bag, function removes}
+\PYG{+w}{	}\PYG{c+c1}{//one copy of target and returns true, otherwise returns false}
+\PYG{+w}{	}\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n+nf}{erase\PYGZus{}one}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{value\PYGZus{}type}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{target}\PYG{p}{);}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c+c1}{//removes all copies of the target and return value tells how}
+\PYG{+w}{	}\PYG{c+c1}{//many copies were removed}
+\PYG{+w}{	}\PYG{n}{size\PYGZus{}type}\PYG{+w}{ }\PYG{n+nf}{erase}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{value\PYGZus{}type}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{target}\PYG{p}{);}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c+c1}{//Union operator \PYGZhy{} the union of two bags is a new larger bag that contains}
+\PYG{+w}{	}\PYG{c+c1}{//all the numbers in the first bag plus all the numbers in the second bag}
+\PYG{+w}{	}\PYG{n}{bag}\PYG{+w}{ }\PYG{k}{operator}\PYG{o}{+}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{bag}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{b1}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{bag}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{b2}\PYG{p}{);}
+\PYG{+w}{	}
+\PYG{+w}{	}\PYG{c+c1}{//overloading the += operator to activate the += member function of the}
+\PYG{+w}{	}\PYG{c+c1}{//first bag and use the second bag as the argument}
+\PYG{+w}{	}\PYG{c+c1}{//ex first\PYGZus{}bag += second\PYGZus{}bag;}
+\PYG{+w}{	}\PYG{k+kt}{void}\PYG{+w}{ }\PYG{k}{operator}\PYG{o}{+=}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{bag}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{addend}\PYG{p}{);}
+\PYG{p}{\PYGZcb{};}
+
+\end{Verbatim}
