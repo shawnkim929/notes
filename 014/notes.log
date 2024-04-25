@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.12)  23 APR 2024 17:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.12)  25 APR 2024 15:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -554,7 +554,7 @@ notes.aux) )
 Here is how much of TeX's memory you used:
  15983 strings out of 478268
  309362 string characters out of 5846347
- 577222 words of memory out of 5000000
+ 577213 words of memory out of 5000000
  33938 multiletter control sequences out of 15000+600000
  481281 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -566,7 +566,7 @@ r10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss
 10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssb
 x10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 10.pfb>
-Output written on notes.pdf (2 pages, 74405 bytes).
+Output written on notes.pdf (2 pages, 74818 bytes).
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
  27 compressed objects within 1 object stream
