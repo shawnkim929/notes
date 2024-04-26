@@ -1,0 +1,56 @@
+\documentclass[11pt,a4paper,english]{paper}
+\usepackage{mathtools}
+\usepackage[breakable]{tcolorbox}
+%\usepackage{minted}
+\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bluebox}[1]{colback=blue!5!white,colframe=blue!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{gbox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bbox}[1]{colback=black!5!white,colframe=black!75!black,fonttitle=\bfseries,title=#1,breakable}
+\usepackage{amsmath}                                    % extensive math options
+\usepackage{amssymb}                                    % special math symbols
+\usepackage[mathlines]{lineno}
+\usepackage[Gray,squaren,thinqspace,thinspace]{SIunits} % elegant units
+\usepackage{listings}                                   % source code
+
+\usepackage{graphicx}
+\graphicspath{ {./} }
+%\setminted{breaklines}
+
+\begin{document}
+
+\title{CS 008 \\ Lecture notes \\ 4/25/24}
+\maketitle
+
+\section{Direct Access Arrays and Hash Tables}
+
+\subsection{Outline}
+
+\begin{itemize}
+
+  \item Pre-Lecture questions
+
+\end{itemize}
+
+
+\section{Pre-lecture questions}
+
+Important note with AVT Trees:
+\noindent 
+
+\bigskip
+\noindent \textbf{Big lecture question:} Is it possible to execute the function $find(k)$ any more quickly than $O(log(n))$?
+
+\section{Word RAM model}
+
+Any region of memory can be accessed in $O(1)$ complexity time. In reality it is not but for the most part this statement is true. In the word RAM model, anything that is within 64-bits is within $O(1)$. When we work with a data structure with $n$ elements, $n < 2^{w}$. For most computers, $w = 64$ and we call this a \textbf{word}. Memory is divided into w-bit chunks and each chunk can be read and written in $O(1)$.
+
+\section{Comparison model of computation}
+
+The comparison model of computation is more restrictive than the Word RAM Model. Like what the name implies, the comparison model can only perform comparisons (==, !=, \lesser, \greater, \leq, \geq)
+
+\section{Direct access arrays}
+
+Going back to our lecture question: Finding an 
+
+
+\end{document}
