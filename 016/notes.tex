@@ -1,0 +1,82 @@
+\documentclass[11pt,a4paper,english]{paper}
+\usepackage{mathtools}
+\usepackage[breakable]{tcolorbox}
+%\usepackage{minted}
+\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bluebox}[1]{colback=blue!5!white,colframe=blue!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{gbox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bbox}[1]{colback=black!5!white,colframe=black!75!black,fonttitle=\bfseries,title=#1,breakable}
+\usepackage{amsmath}                                    % extensive math options
+\usepackage{amssymb}                                    % special math symbols
+\usepackage[mathlines]{lineno}
+\usepackage[Gray,squaren,thinqspace,thinspace]{SIunits} % elegant units
+\usepackage{listings}                                   % source code
+
+\usepackage{graphicx}
+\graphicspath{ {./} }
+%\setminted{breaklines}
+
+\begin{document}
+
+\title{CS 008 \\ Lecture notes \\ 4/25/24}
+\maketitle
+
+\begin{gbox}{Pre-lecture notes:} {
+
+Exam scores are out, grades are released on canvas.
+
+Most of the grading will be based off of assignments and lab-work.
+
+
+}\end{gbox}
+
+\section{Direct Access Arrays and Hash Tables pt. 2}
+
+\begin{bbox}{Outline:}{
+
+Another lecture on these topics:
+
+\begin{itemize}
+
+  \item Motivation
+  \item Word RAM model
+  \item Direct access arrays
+  \item Hash tables
+
+\end{itemize}
+} \end{bbox}
+
+\section{Motivation}
+
+\section{Word RAM model}
+
+\section{Direct access arrays}
+
+A direct access array is an array where every index in the array is associated with a specific element. Each element has it's own place in the array. Direct access arrays are very fast but have a major flaw where it takes up too much space.
+
+\bigskip
+\begin{bluebox}{Operations:} {
+
+    As previously stated, direct access arrays are fast however they are very spacially inefficient.
+
+    \begin{itemize}
+
+    \item $build() = O(n)$
+    \item $find(k) = O(1)$
+    \item $add(k) = O(1)$
+    \item $delete(k) = O(1)$
+
+    \end{itemize}
+
+
+}\end{bluebox}
+
+\bigskip
+\noindent
+In summary, direct access arrays are great for speed however for larger ranges of values, the size of the array would be too big. With smaller ranges of numbers.
+
+\section{Hash tables}
+
+
+
+\end{document}

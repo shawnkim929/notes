@@ -18,7 +18,7 @@
 
 \begin{document}
 
-\title{CS 008 \\ Lecture notes \\ 4/25/24}
+\title{CS 008 \\ Lecture notes \\ 4/25/24 \& 4/30/24}
 \maketitle
 
 \section{Direct Access Arrays and Hash Tables}
@@ -28,17 +28,22 @@
 \begin{itemize}
 
   \item Pre-Lecture questions
+  \item The WORD RAM model (the main computational model for CS008)
+  \item Direct access arrays
+  \item Hash tables
 
 \end{itemize}
 
 
 \section{Pre-lecture questions}
 
-Important note with AVT Trees:
+Important question to keep in mind for the lecture:
 \noindent 
 
 \bigskip
+\begin{gbox}{}{
 \noindent \textbf{Big lecture question:} Is it possible to execute the function $find(k)$ any more quickly than $O(log(n))$?
+}\end{gbox}
 
 \section{Word RAM model}
 
@@ -46,11 +51,67 @@ Any region of memory can be accessed in $O(1)$ complexity time. In reality it is
 
 \section{Comparison model of computation}
 
-The comparison model of computation is more restrictive than the Word RAM Model. Like what the name implies, the comparison model can only perform comparisons (==, !=, \lesser, \greater, \leq, \geq)
+The comparison model of computation is more restrictive than the Word RAM Model. Like what the name implies, the comparison model can only perform comparisons (==, !=, , , $\leq$, $\geq$)
 
 \section{Direct access arrays}
 
-Going back to our lecture question: Finding an 
+Going back to our lecture question: 
+
+\begin{gbox}{}{
+    Is it possible to execute a $find(k)$ function any more quickly than $O(log(n))$?
+}\end{gbox}
+
+\noindent Using direct access arrays, you can execute a find function in $O(1)$.
+
+\noindent A direct access array is an array where every index in the array is associated with a specific element. Each element has it's own place in the array. Direct access arrays are very fast but have a major flaw where it takes up too much space.
+
+\bigskip
+\begin{bluebox}{Operations:} {
+
+    As previously stated, direct access arrays are fast however they are very spacially inefficient.
+
+    \begin{itemize}
+
+    \item $build() = O(n)$
+    \item $find(k) = O(1)$
+    \item $add(k) = O(1)$
+    \item $delete(k) = O(1)$
+
+    \end{itemize}
+
+    These are fast! However very inefficient space wise.
+
+
+}\end{bluebox}
+
+\bigskip
+\noindent
+In summary, direct access arrays are great for speed however for larger ranges of values, the size of the array would be too big. With smaller ranges of numbers, it is OK. Before making a direct access array, you need to know the largest potential value you can have. It is dependent on the largest \textit{potential} element that can be in the array and contains an index for every single element up until that point.
+
+
+\section{Hashmaps}
+
+As said before, the biggest flaw to using direct access arrays is space. When working with direct access arrays, you have an index for every possible element.
+
+\bigskip
+\noindent
+However, we can reduce the hashmap to a smaller direct access array that leads to lists. We call this a \textbf{hash function} but the basic gist of it is that it reduces the large direct access array to a smaller array where the index represents a certain pattern / group of elements.
+
+\bigskip
+\noindent 
+\textbf{Consider:}
+
+\noindent Direct access array: $[ a_0, a_1, a_2, \ldots, a_{n-1} ]$ where $a_i$ represents a potential value.
+
+\bigskip
+
+\noindent Now, consider a hash function using modulus ($\%$). We can define some hash function $k$ where $h(k) = k \% n$. Each group would be called a \textbf{key}. So, for example, we could say any value of the direct access array where $h(k) = k \% n \equiv 0$ has a key of 0.
+
+\bigskip
+\noindent
+The main advantage of a hash table is how efficient it is for space and it is also a lot less intense to build compared to a direct access array where the array needs an index for every \textit{potential} element. In summary, hash tables are used as a more space efficient way to store values than direct access array while still being fast.
+
 
 
 \end{document}
+
