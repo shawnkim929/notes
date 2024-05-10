@@ -1,0 +1,99 @@
+\documentclass[11pt,a4paper,english]{paper}
+\usepackage{mathtools}
+\usepackage[breakable]{tcolorbox}
+%\usepackage{minted}
+\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bluebox}[1]{colback=blue!5!white,colframe=blue!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{gbox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bbox}[1]{colback=black!5!white,colframe=black!75!black,fonttitle=\bfseries,title=#1,breakable}
+\usepackage{amsmath}                                    % extensive math options
+\usepackage{amssymb}                                    % special math symbols
+\usepackage[mathlines]{lineno}
+\usepackage[Gray,squaren,thinqspace,thinspace]{SIunits} % elegant units
+\usepackage{listings}                                   % source code
+
+\usepackage{graphicx}
+\graphicspath{ {./} }
+%\setminted{breaklines}
+
+\begin{document}
+
+\title{CS 008 \\ Lecture notes \\ 5/7/24}
+\maketitle
+
+\section{Sorting}
+
+\subsection{Outline}
+
+\begin{itemize}
+  
+  \item Why do we care about sorting?
+  \item Search algorithms
+  \item Sorting algorithms
+
+\end{itemize}
+
+\section{Why do we care?}
+
+Sorting and searching algorithms are both really important because sorted arrays are a lot nicer to work with. You off load some of the work by sorting an array beforehand to create more efficient work. 
+
+There are tradeoffs for this (like everything in computer science) and this all depends on what's needed for the task.
+
+When we look back at sets, we can see that the find function can be a lot more efficient if the set / array is sorted. 
+
+
+\section{Search algorithms}
+
+Sequential search is when you go through every element in the array (or until you get to your desired element) to look for your element. However, a sequential search has a time complexity of O(n) and if you have a sorted array, you can shorten this search by using a binary search. A binary search has been mentioned before in earlier lectures and has a benefit of being faster than a sequential search but as mentioned before, everything has tradeoffs and a binary search can only be performed on a sorted array.
+
+
+\section{Sorting algorithms}
+
+Sorting algorithms are characterized by the following:
+
+\begin{bluebox}{}{
+\begin{itemize}
+
+  \item Computational complexity
+  \item Spatial complexity
+  \item Destructiveness
+  \item "In-place" (how much extra spatial complexity the algorithm uses)
+  \item Stable or unstable
+
+\end{itemize}
+}\end{bluebox}
+
+\subsection{Stability}
+
+Stability in sorting algorithms imply that the order of "equal" items are in the same order as before. Equal-valued items are not exactly equal to each other and having a stable sorting algorithm means that the order before the sorting algorithm between equal value items are not changed after the sorting algorithm (which can be useful in some cases).
+
+\subsection{Sorting algorithms}
+
+As mentioned before, there are tradeoffs for everything and this is highlighted in sorting algorithms. Each have their pros and cons but there is no "best" sorting algorithm in general. Each sorting algorithm have their own strengths and weaknesses depending on the use case.
+
+\subsection{Permutation sort}
+
+As the name implies, this sorting algorithm uses permutations of the array itself. What this means is that this algorithm creates permutations (specific combinations of the array) and then checks if it's sorted. This algorithm is a bit of a joke and has a time complexity of $O(n! * n)$. This algorithm is not stable.
+
+\subsection{Selection sort}
+
+Selection sort is an algorithm that sorts an array one piece at a time and swaps values to create a sorted array. The time complexity for this is $O(n^2)$ and is stable depending on the implementation but is in-place.
+
+\subsection{Insertion sort}
+
+Insertion sort is an algorithm that sorts an array by sorting an initially small chunk of the array and then growing that chunk and sorting it until that chunk becomes the entire array. The time complexity of this algorithm is $O(n^2)$ and stability depends on implementation and is in-place.
+
+\subsection{Merge sort}
+
+... IMPLEMENT LATER
+
+\subsection{Direct access array sorting}
+
+Sorting an array using a direct access is a lot simpler than the algorithms talked about but they do not handle duplicates well, which we call counting sort and is defined to be $O(n + U)$. However, we learned before that with direct access arrays, we could use a hash table to counter the issue of duplicate collisions. Using a hash table and a queue, we can still maintain stability with the sorted array. Which introduces us to Radix Sort.
+
+\subsection{Radix Sort}
+
+Radix Sort builds on counting sort. Using keys that are not just the values themselves but an ordered series of keys, we can use these series of keys to sort the array with counting sort. In general, the amount of times needed to do counting sort is $log_{n}{(U)}$
+
+\end{document}
+
