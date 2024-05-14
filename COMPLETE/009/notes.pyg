@@ -1,0 +1,11 @@
+
+int factorial(int number) {
+    int factorial_result = 1;
+    while (number > 1) {
+        factorial_result = factorial_result * number;
+        number--;
+    }
+
+    return factorial_result;
+}
+
