@@ -167,9 +167,6 @@ int factorial(int number) {
 The function that is called recursively should have one return statement and the return should be the last line in the function. The return statement should not perform any computation of it's own (it needs to be a pure return statement that just passes in values). Some of the ways to help with writing tail recursive functions involve helper functions, ternary operators and accumulators. 
 
 \bigskip
-\begin{bbox}{Figure 3:} {
-\end{bbox}
-
 \bigskip
 \noindent It's significantly more difficult to write tail recursive functions without the use of helper functions, ternary operators and an accumulator variable. Since one of the goals of tail recursion is to have only one return statement, returning to a helper function with an accumulator variable which returns a ternary operator makes tail recursion significantly easier to work with.
 
