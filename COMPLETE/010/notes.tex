@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,english]{paper}
+\documentclass[11pt,a4paper,english]{article}
 \usepackage{mathtools}
 \usepackage[breakable]{tcolorbox}
 %\usepackage{minted}
@@ -18,19 +18,12 @@
 
 \begin{document}
 
-\title{CS 008 \\ Lecture notes \\ 3/28/24}
+
+%\title{CS 008 \\ Lecture notes \\ 3/28/24}
+\title{Introduction to Trees}
 \maketitle
 
-\section{Outline}
-
-\begin{itemize} {
-
-    \item Trees
-    \item Binary Trees
-    \item Git
-
-}\end{itemize}
-
+\tableofcontents
 \section{Trees}
 
 \textbf{Trees} are a series of nodes where one node is the root node to the tree. Every other node apart from the root node will have a parent node. All nodes are connected in some way and the connections between the nodes go in one direction.
@@ -80,15 +73,6 @@ All leaves have the same or atleast within one depth from each other in a comple
 A binary tree can be implemented as either an array or a linked list of nodes. The array implementation of the binary tree is simply just an ordered array of the nodes by number (so if we had a tree where the root is considered 1 and the children are 2 and 3, the array representation would be 1, 2, 3).
 
 \bigskip
-
-\begin{bbox}{Figure 1:}
-
-
-    / Tree example
-
-  \end{bbox}
-
-  \bigskip
 
 \noindent For the array implementation, the time complexity of getting a node or getting a root of the tree would be O(1). With the linked list implementation, looking for a specific node in the linked list implementation would be O(n). Looking for the value of the root is still O(1) even in the linked list implemenation.
 

@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,english]{paper}
+\documentclass[11pt,a4paper,english]{article}
 \usepackage{mathtools}
 \usepackage[breakable]{tcolorbox}
 %\usepackage{minted}
@@ -18,20 +18,12 @@
 
 \begin{document}
 
-\title{CS 008 \\ Lecture notes \\ 4/11/24}
+%\title{CS 008 \\ Lecture notes \\ 4/11/24}
+\title{BST Trees and Time Complexity}
+\date{April 11, 2024}
 \maketitle
 
-\section{Outline}
-
-\begin{itemize}
-
-  \item Binary Search Tree review
-  \item Big-O, Big-$\Omega$, Big-$\theta$
-  \item Space vs Time (complexity)
-
-
-\end{itemize}
-
+\tableofcontents
 \section{Binary Search Trees}
 
 \textbf{Binary Search Trees} are a specific type of a binary tree where the right child of a node is greater than the parent node and the left child of the node is lesser than the parent. (It could also work with the places switched). The time complexity of searching for a value in a \textbf{binary search tree} is $O(h)$ where the variable $h$ is the height of the tree itself which is the largest number of pointers followed from the top to the leaf node. In the case of a \textbf{balanced binary search tree}, the time complexity will be $O(h) = O(log(n))$.
