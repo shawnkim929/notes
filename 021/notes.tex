@@ -56,8 +56,8 @@ The following are the required functions for a graph:
     \item build([list of vertices and edge])
     \item insert\_vertex(v): $O(n^2)$ for an adjacency matrix, $O(n)$ for an adjacency list.
     \item insert\_edge($v_1$, $v_2$): O(1) for an adjacency matrix, $O(1_a)$ for an adjacency list.
-    \item remove\_vertex(v): $O(n^2)$ for an adjacency matrix\footnote{This depends, this can be $O(1)$ if you simply just ignore the removed vertex in the matrix}, 
-    \item remove\_edge($v_1$, $v_2$): $O(1)$ for an adjacency matrix, $O(1)$ for an adjacency list.
+    \item remove\_vertex(v): $O(n^2)$ for an adjacency matrix\footnote{This depends, this can be $O(1)$ if you simply just ignore the removed vertex in the matrix}, $O(n)$ for an adjacency list.
+    \item remove\_edge($v_1$, $v_2$): $O(1)$ for an adjacency matrix, $O(E)$ for an adjacency list where $E$ represents the amount of edges.
     \item path\_exists($v_1$, $v_2$): Is there a path between $v_1$ and $v_2$?
     \item shortest\_path($v_1$, $v_2$): How long is the shortest path between $v_1$ and $v_2$?
     \item single\_source\_shortest\_paths(v): Return the lengths of the shortest paths between v and all other nodes.
