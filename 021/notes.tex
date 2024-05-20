@@ -1,0 +1,76 @@
+\documentclass[11pt,a4paper,english]{article}
+\usepackage{mathtools}
+\usepackage[breakable]{tcolorbox}
+%\usepackage{minted}
+\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bluebox}[1]{colback=blue!5!white,colframe=blue!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{gbox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bbox}[1]{colback=black!5!white,colframe=black!75!black,fonttitle=\bfseries,title=#1,breakable}
+\usepackage{amsmath}                                    % extensive math options
+\usepackage{amssymb}                                    % special math symbols
+\usepackage[mathlines]{lineno}
+\usepackage[Gray,squaren,thinqspace,thinspace]{SIunits} % elegant units
+\usepackage{listings}                                   % source code
+
+\usepackage{graphicx}
+\graphicspath{ {./} }
+%\setminted{breaklines}
+
+\begin{document}
+
+\title{Introduction to Graphs and BFS.}
+
+%May 16, 2024
+\date{May 16, 2024}
+\maketitle
+
+\tableofcontents
+
+\section{Graphs}
+
+\subsection{Messed up trees}
+
+Trees have a sense of structure with a root and different nodes like leaves. With a graph is more of a messed up tree where there is no root node and no notion of depth apart from distance. There is also no idea of a parent or child in a graph. All the nodes in a graph are sort-of equivalent in terms of rank. One difference between a tree and a graph is that graphs can have cycles of nodes.
+
+\bigskip
+\noindent With graphs, nodes can be connected anywhere and can even be alone.
+
+\subsection{Formal definition}
+
+\textbf{Graphs} are trees that have no special root node, can contain cycles and any node can be connected to any other node. These nodes are called vertices and the connections between them are called edges.
+
+\subsection{Types}
+
+There are two types of graphs to keep track of: undirected and directed graphs. In an undirected graph, the nodes have no sense of direction between nodes whereas in a directed graph, nodes point to each other in specific directions. One consequence of a directed graph is there can be nodes that point but are not pointed to.\footnote{Nodes can point to themselves too but this is not a focus of the class}
+
+\subsection{Path}
+
+A path is a set of nodes that can be followed to reach a specific node from a starting node.
+
+\subsection{Implementation}
+
+The following are the required functions for a graph:
+
+\begin{itemize} {
+
+    \item build([list of vertices and edge])
+    \item insert\_vertex(v): $O(n^2)$ for an adjacency matrix, $O(n)$ for an adjacency list.
+    \item insert\_edge($v_1$, $v_2$): O(1) for an adjacency matrix, $O(1_a)$ for an adjacency list.
+    \item remove\_vertex(v): $O(n^2)$ for an adjacency matrix\footnote{This depends, this can be $O(1)$ if you simply just ignore the removed vertex in the matrix}, 
+    \item remove\_edge($v_1$, $v_2$): $O(1)$ for an adjacency matrix, $O(1)$ for an adjacency list.
+    \item path\_exists($v_1$, $v_2$): Is there a path between $v_1$ and $v_2$?
+    \item shortest\_path($v_1$, $v_2$): How long is the shortest path between $v_1$ and $v_2$?
+    \item single\_source\_shortest\_paths(v): Return the lengths of the shortest paths between v and all other nodes.
+
+}
+\end{itemize}
+
+\bigskip
+\noindent
+Graphs can be implemented by a 2 dimensional adjacency matrix or an adjacency list using a direct access array or hash table.
+
+\section{Breadth-First Search.}
+
+One idea used to find the shortest path between two vertices is called Breadth-First Search (BFS). By going through an adjacency list, we find the adjacent values of the value we are looking for and then we spread out to the subarrays / sublists of these adjacent vertices. We repeat until we can find the value.
+
+\end{document}
