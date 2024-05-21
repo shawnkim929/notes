@@ -2,10 +2,10 @@
 \usepackage{mathtools}
 \usepackage[breakable]{tcolorbox}
 %\usepackage{minted}
-\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1,breakable}
-\newtcolorbox{bluebox}[1]{colback=blue!5!white,colframe=blue!75!black,fonttitle=\bfseries,title=#1,breakable}
-\newtcolorbox{gbox}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1,breakable}
-\newtcolorbox{bbox}[1]{colback=black!5!white,colframe=black!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{mybox}[1]{colback=white!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bluebox}[1]{colback=white!5!white,colframe=cyan!100!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{gbox}[1]{colback=white!5!white,colframe=lime!100!black,fonttitle=\bfseries,title=#1,breakable}
+\newtcolorbox{bbox}[1]{colback=white!5!white,colframe=black!100!black,fonttitle=\bfseries,title=#1,breakable}
 \usepackage{amsmath}                                    % extensive math options
 \usepackage{amssymb}                                    % special math symbols
 \usepackage[mathlines]{lineno}
@@ -20,9 +20,16 @@
     linkcolor=blue,  %choose some color if you want links to stand out
 }
 
+
 \usepackage{graphicx}
 \graphicspath{ {./} }
 %\setminted{breaklines}
+
+\usepackage{titlesec}
+
+\titleformat{\chapter}[hang]{\huge\bfseries}{\thechapter .    }{0pt}{}{}
+\titleformat{\subsection}[hang]{\large\bfseries}{}{0pt}{}{}
+
 
 \begin{document}
 
@@ -177,20 +184,17 @@ Similarly to how a BST can be used to implement a set, the traversal order of th
 
 
 
-\section{AVL Trees (NEED TO FINISH)}
+\section{AVL Trees}
 
-AVL Trees are a specific type of binary trees and have a specific property where it "self-balances" itself. Sometimes, trees will have an issue where 
+AVL Trees are a specific type of binary tree (usually BST Trees), that contains a self-balancing property. This means that the AVL Tree is persistent on maintaining balance with it's nodes.
 
+\bigskip
+\noindent
+AVL Trees are self-balancing, to implement this we use something called a \textbf{balance factor}. The balance factor is determined by the difference between the heights of the left and right sub-trees of every node. Every node has a balance factor. Every node in an AVL Tree needs to have a balance factor of -1, 0 or 1. This means that the heights between the two sub-trees of a node cannot differ more than 1. If we consider both sub-trees of a node and followed both sub-trees until they reached a leaf node, the difference between this traversal to the bottom with left and right sub-trees cannot differ more than 1.
 
-
-
-
-
-
-
-
-
-
+\bigskip
+\noindent
+To maintain this property of balance, AVL Trees 'rotate' nodes around to help maintain this.  You can find a good resource to learn about rotations through \href{https://www.programiz.com/dsa/avl-tree}{this link}.
 
 
 \chapter{Time complexity}
@@ -228,7 +232,7 @@ Important question to keep in mind for the lecture:
 \noindent 
 
 \bigskip
-\begin{gbox}{}{
+\begin{gbox}{Question:}{
 \noindent \textbf{Big lecture question:} Is it possible to execute the function $find(k)$ any more quickly than $O(log(n))$?
 }\end{gbox}
 
@@ -244,9 +248,11 @@ The comparison model of computation is more restrictive than the Word RAM Model.
 
 Going back to our lecture question: 
 
-\begin{gbox}{}{
+\bigskip
+\begin{gbox}{Question:}{
     Is it possible to execute a $find(k)$ function any more quickly than $O(log(n))$?
 }\end{gbox}
+\bigskip
 
 \noindent Using direct access arrays, you can execute a find function in $O(1)$.
 
@@ -303,23 +309,18 @@ The main advantage of a hash table is how efficient it is for space and it is al
 
 \section{Why do we care?}
 
-Sorting and searching algorithms are both really important because sorted arrays are a lot nicer to work with. You off load some of the work by sorting an array beforehand to create more efficient work. 
-
-There are tradeoffs for this (like everything in computer science) and this all depends on what's needed for the task.
-
-When we look back at sets, we can see that the find function can be a lot more efficient if the set / array is sorted. 
-
+Sorting and searching algorithms are both really important because sorted arrays are a lot nicer to work with. You off load some of the work by sorting an array beforehand to create more efficient work. There are tradeoffs for this (like everything in computer science) and this all depends on what's needed for the task. For example, when we look back at sets, we can see that the find function can be a lot more efficient if the set / array is sorted. 
 
 \section{Search algorithms}
 
 Sequential search is when you go through every element in the array (or until you get to your desired element) to look for your element. However, a sequential search has a time complexity of O(n) and if you have a sorted array, you can shorten this search by using a binary search. A binary search has been mentioned before in earlier lectures and has a benefit of being faster than a sequential search but as mentioned before, everything has tradeoffs and a binary search can only be performed on a sorted array.
 
-
 \section{Sorting algorithms}
 
 Sorting algorithms are characterized by the following:
 
-\begin{bluebox}{}{
+\bigskip
+\begin{bluebox}{Characteristics:}{
 \begin{itemize}
 
   \item Computational complexity
@@ -335,10 +336,6 @@ Sorting algorithms are characterized by the following:
 
 Stability in sorting algorithms imply that the order of "equal" items are in the same order as before. Equal-valued items are not exactly equal to each other and having a stable sorting algorithm means that the order before the sorting algorithm between equal value items are not changed after the sorting algorithm (which can be useful in some cases).
 
-\subsection{Sorting algorithms}
-
-As mentioned before, there are tradeoffs for everything and this is highlighted in sorting algorithms. Each have their pros and cons but there is no "best" sorting algorithm in general. Each sorting algorithm have their own strengths and weaknesses depending on the use case.
-
 \subsection{Permutation sort}
 
 As the name implies, this sorting algorithm uses permutations of the array itself. What this means is that this algorithm creates permutations (specific combinations of the array) and then checks if it's sorted. This algorithm is a bit of a joke and has a time complexity of $O(n! * n)$. This algorithm is not stable.
@@ -351,9 +348,9 @@ Selection sort is an algorithm that sorts an array one piece at a time and swaps
 
 Insertion sort is an algorithm that sorts an array by sorting an initially small chunk of the array and then growing that chunk and sorting it until that chunk becomes the entire array. The time complexity of this algorithm is $O(n^2)$ and stability depends on implementation and is in-place.
 
-\subsection{Merge sort (WIP)}
+\subsection{Merge sort}
 
-... IMPLEMENT LATER
+Merge sort is an algorithm that takes advantage of the idea behind the binary trees and binary searches. Searching in both of these involves splitting an array into chunks. With merge sort, the array is broken down into multiple chunks until it finds an array of two values which are swapped and then merged and 'sorted' with each smaller part to eventually produce one large sorted array. The time complexity behind merge sort is $O(n log(n))$.
 
 \subsection{Direct access array sorting}
 
@@ -398,13 +395,21 @@ Radix sort is essentially an iterative approach to counting sort. Instead of usi
 
 The basic gist of a priority queue is that it is a data structure when elements that go in are automatically sorted into the queue.
 
-\subsection{Interface (IN PROGRESS)}
+\bigskip
 
-\begin{bbox}{Functions}{
+\begin{bluebox}{Implementation}{
+
+    \begin{itemize} {
+
+        \item build($x$): Build a priority queue from a list of values.
+        \item insert($x$): Insert a value $x$ into the existing priority queue.
+        \item delete\_max(): Return and remove the maximum value from the priority queue.
+        \item find\_max(): Return the max value.
+
+    } \end{itemize}
 
 
-
-}\end{bbox}
+}\end{bluebox}
 
 \subsection{Heaps}
 
